@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --blue: #0000ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-blue: var(--blue);
+  --font-garamond: var(--font-eb-garamond);
+  --font-mono: var(--font-xanh-mono);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-xanh-mono), monospace;
+  font-size: 12px;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Fixed mobile viewport */
+  width: 402px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-bottom: 0;
+}
+
+html {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#__next, body > div {
+  height: 100%;
+}
+
+/* Ensure consistent line heights */
+* {
+  line-height: inherit;
+}
+
+/* Thin lines - 0.5px */
+.line-thin {
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: #000000;
+}
+
+/* Hanging punctuation for titles */
+.hanging-punctuation {
+  text-indent: -0.5em;
+  padding-left: 0.5em;
+}
+
+/* Author name inset (no hanging punctuation) */
+.author-inset {
+  padding-left: 0.5em;
+}
+
+/* Tighter spacing for table */
+button {
+  line-height: 1;
+}
+
+input::placeholder {
+  color: #999;
+}
