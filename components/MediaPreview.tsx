@@ -160,7 +160,7 @@ export default function MediaPreview({ selectedMedia, shouldAutoplay = true }: M
         // Default video when nothing selected - stretched to full height
         <div className="w-full h-full bg-black relative">
           <video 
-            src="/4471213-uhd_3840_2160_30fps.mp4"
+            src="/default-video.mp4"
             autoPlay
             loop
             muted
