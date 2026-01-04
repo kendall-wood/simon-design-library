@@ -122,7 +122,7 @@ ${JSON.stringify(newItem, null, 2)}`);
             >
               <option value="Book">Book</option>
               <option value="Video">Video</option>
-              <option value="Photo">Photo</option>
+              <option value="Image">Image</option>
             </select>
           </div>
 
@@ -138,7 +138,7 @@ ${JSON.stringify(newItem, null, 2)}`);
           </div>
 
           {/* Book-specific fields */}
-          {formData.mediaType === 'Book' && (
+          {(formData.mediaType === 'Book') && (
             <>
               <div>
                 <label className="block mb-1">Total Pages</label>
@@ -185,7 +185,7 @@ ${JSON.stringify(newItem, null, 2)}`);
           )}
 
           {/* Video-specific fields */}
-          {formData.mediaType === 'Video' && (
+          {(formData.mediaType === 'Video') && (
             <div>
               <label className="block mb-1">Video URL</label>
               <input
@@ -198,8 +198,8 @@ ${JSON.stringify(newItem, null, 2)}`);
             </div>
           )}
 
-          {/* Photo-specific fields */}
-          {formData.mediaType === ('Photo' as const) && (
+          {/* Image-specific fields */}
+          {(formData.mediaType === 'Image') && (
             <div>
               <label className="block mb-1">Image URLs (one per line)</label>
               <textarea
