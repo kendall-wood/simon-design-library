@@ -11,7 +11,7 @@ interface BookletPrintModalProps {
 }
 
 export default function BookletPrintModal({ media, onClose }: BookletPrintModalProps) {
-  const [printMode, setPrintMode] = useState<'simple'>('simple'); // Default to simple (binder clip)
+  const [printMode, setPrintMode] = useState<'simple' | 'booklet'>('simple'); // Default to simple (binder clip)
   const [bodyTextSize, setBodyTextSize] = useState(12); // Default 12pt for print
   const [isGenerating, setIsGenerating] = useState(false);
   const [previewPageIndex, setPreviewPageIndex] = useState(0); // Which pair of pages to show (0 = cover, 1 = pages 1-2, etc.)
@@ -344,7 +344,7 @@ export default function BookletPrintModal({ media, onClose }: BookletPrintModalP
             }}
           >
             {/* Render content as-is with proper handling of *** separators */}
-            {(page.content || '').split('\n\n').map((para, idx) => {
+            {(page.content || '').split('\n\n').map((para: string, idx: number) => {
               if (para.trim() === '***') {
                 return (
                   <div 
@@ -561,7 +561,7 @@ export default function BookletPrintModal({ media, onClose }: BookletPrintModalP
       // Split by paragraph breaks
       const paragraphs = (page.content || '').split('\n\n');
       
-      paragraphs.forEach((para, paraIdx) => {
+      paragraphs.forEach((para: string, paraIdx: number) => {
         if (!para.trim()) return;
         
         // Check if this is a separator

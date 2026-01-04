@@ -18,6 +18,7 @@ export default function NavigationBar({
   totalLibraryCount = 0
 }: NavigationBarProps) {
   const [likedVideos, setLikedVideos] = useState<Set<string>>(new Set());
+  const [shareFeedback, setShareFeedback] = useState<string>('');
 
   // Load liked videos from localStorage
   useEffect(() => {

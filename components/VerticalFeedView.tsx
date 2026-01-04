@@ -336,7 +336,7 @@ export default function VerticalFeedView({ feedItems, onBack }: VerticalFeedView
 
                       {/* Description/Reason */}
                       <p className="text-[13px] leading-[20px]">
-                        {item.reason || item.description}
+                        {('reason' in item ? item.reason : null) || item.description}
                       </p>
                     </div>
                   </div>

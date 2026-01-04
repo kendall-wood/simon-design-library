@@ -185,7 +185,7 @@ export default function Home() {
   }, [currentView]);
 
   // Determine what to show in preview
-  let previewMedia: MediaItem | YouTubeFeedItem | null = null;
+  let previewMedia: MediaItem | FeedItem | null = null;
   if (currentView === 'feed') {
     previewMedia = currentFeedItem;
   } else if (selectedMedia && selectedMedia.youtubeClips) {

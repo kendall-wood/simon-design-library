@@ -280,7 +280,7 @@ export default function MediaPreview({ selectedMedia, shouldAutoplay = true }: M
             </div>
           )}
           
-          {'mediaType' in selectedMedia && selectedMedia.mediaType === 'Photo' && selectedMedia.images && (
+          {'mediaType' in selectedMedia && selectedMedia.mediaType === 'Image' && selectedMedia.images && (
             <div className="w-full h-full relative">
               <div 
                 className="w-full h-full overflow-x-auto flex snap-x snap-mandatory"

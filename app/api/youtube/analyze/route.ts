@@ -387,7 +387,7 @@ async function handleChannel(channelIdentifier: string, type: 'handle' | 'id') {
     if (remaining <= 0) break;
     
     const maxResults = Math.min(50, remaining); // YouTube API max is 50 per page
-    const playlistUrl = `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${uploadsPlaylistId}&part=snippet&maxResults=${maxResults}&key=${youtubeApiKey}${nextPageToken ? `&pageToken=${nextPageToken}` : ''}`;
+    const playlistUrl: string = `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${uploadsPlaylistId}&part=snippet&maxResults=${maxResults}&key=${youtubeApiKey}${nextPageToken ? `&pageToken=${nextPageToken}` : ''}`;
     
     const playlistResponse = await fetch(playlistUrl);
     
