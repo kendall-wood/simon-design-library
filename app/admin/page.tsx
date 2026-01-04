@@ -199,7 +199,7 @@ ${JSON.stringify(newItem, null, 2)}`);
           )}
 
           {/* Photo-specific fields */}
-          {formData.mediaType === 'Photo' && (
+          {formData.mediaType === ('Photo' as const) && (
             <div>
               <label className="block mb-1">Image URLs (one per line)</label>
               <textarea
