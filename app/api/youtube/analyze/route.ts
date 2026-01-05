@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { YoutubeTranscript } from 'youtube-transcript';
 
 export const dynamic = 'force-dynamic';
-export const maxDuration = 3600; // 1 hour - removed limit for heavy processing
+export const maxDuration = 300; // 5 minutes - max for Hobby plan
 
 // Helper to extract video ID from URL
 function extractVideoId(url: string): string | null {
