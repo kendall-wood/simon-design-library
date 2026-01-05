@@ -166,6 +166,8 @@ export default function MediaPreview({ selectedMedia, shouldAutoplay = true }: M
             muted
             playsInline
             className="w-full h-full object-cover"
+            onError={(e) => console.error('Video error:', e)}
+            onLoadedData={() => console.log('Video loaded successfully')}
           />
         </div>
       ) : isYouTubeFeedItem(selectedMedia) ? (
